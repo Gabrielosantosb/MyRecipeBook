@@ -12,10 +12,10 @@ namespace MyRecipeBook.API.Controllers
     {
 
         [HttpPost]
-        [ProducesResponseType(typeof(ResponseRegisteredUser),StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ResponseRegisterUser),StatusCodes.Status201Created)]
         public IActionResult Register(RequestRegisterUser request)
         {
-            var useCase = new RegisteredUserCase();
+            var useCase = new RegisterUserCase();
             var result = useCase.Execute(request);
             return Created(string.Empty, result);
         }
